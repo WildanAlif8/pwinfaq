@@ -14,26 +14,27 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        // Validasi input
-        $credentials = $request->validate([
+        $request->validate([
             'username' => 'required',
-            'password' => 'required',
+            'password' => 'required'
         ]);
 
-        // Coba melakukan otentikasi
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('/dashboard');
+        $user = $request->only('username', 'password');
+
+        if (Auth::attempt($user)) {
+            if (Auth::user()->role == 'admin') {
+                return redirect('/dashboard');
+            } elseif (Auth::user()->role == 'siswa') {
+                return redirect('/dashboard-siswa');
+            }
+        }else {
+            return redirect()->back()->with('failed', 'Gagal login. username atau password salah.');
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
     }
 
     public function logout(Request $request)
     {
         Auth::logout();
-
         return redirect('/login')->with('success', 'You have been logged out.');
     }
 }

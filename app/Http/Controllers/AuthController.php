@@ -22,6 +22,7 @@ class AuthController extends Controller
 
         // Coba melakukan otentikasi
         if (Auth::attempt($credentials)) {
+            
             return redirect()->intended('/dashboard');
         }
 

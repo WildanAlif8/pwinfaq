@@ -19,8 +19,6 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        $user = $request->only('username', 'password');
-
         if (Auth::attempt($user)) {
             if (Auth::user()->role == 'admin') {
                 return redirect('/dashboard');

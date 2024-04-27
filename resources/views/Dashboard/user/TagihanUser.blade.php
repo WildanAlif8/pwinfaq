@@ -1,44 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.dashboard')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Admin Dashboard </title>
-
-    <!-- General CSS Files -->
-    <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
-
-    <!-- Bootstrap -->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
-
-    <!-- CSS Libraries -->
-    <link rel="stylesheet" href="{{ asset('assets/modules/jqvmap/dist/jqvmap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/modules/summernote/summernote-bs4.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css') }}">
-
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style-admin.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
-    <!-- Start GA -->
-    <script async src="{{ ('https://www.googletagmanager.com/gtag/js?id=UA-94034622-3') }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-94034622-3');
-
-    </script>
-    <!-- /END GA -->
-</head>
-
-<body>
     <div id="app">
         <div class="main-wrapper main-wrapper-1">
             <div class="navbar-bg"></div>
@@ -85,15 +47,18 @@
                     <ul class="sidebar-menu">
                         <ul class="sidebar-menu">
                             <li class="dropdown">
-                                <a href="/DashboardAdmin"><i
+                                <a href="/DashboardUser"><i
                                         class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
                             </li>
                             <li class="dropdown">
-                                <a href="/DataInfaqAdmin"><i class="fas fa-database"></i> <span>Data Infaq</span></a>
+                                <a href="/RiwayatUser"><i class="fas fa-database"></i> <span>Riwayat</span></a>
                             </li>
                             <li class="dropdown active">
-                                <a href="/TagihanSiswaAdmin"><i class="fas fa-user-graduate"></i> <span>Tagihan
-                                        Siswa</span></a>
+                                <a href="/TagihanUser"><i class="fas fa-user-graduate"></i> <span>Tagihan
+                                       Siswa </span></a>
+                            </li>
+                            <li class="dropdown ">
+                                <a href="/UploadUser"><i class="fa fa-upload"></i> <span>Upload</span></a>
                             </li>
                         </ul>
                     </ul>
@@ -110,7 +75,7 @@
                     <div class="section-body">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Hi, Admin</h4>
+                                <h4>Hi, User</h4>
                             </div>
                             <div class="card-body">
                                 <p>Anda dapat melihat tagihan atau tunggakan siswa dalam berinfaq & shodaqoh, silahkan
@@ -323,35 +288,4 @@
         </div>
     </div>
 
-    <!-- General JS Scripts -->
-    <script src="{{ asset('assets/modules/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/popper.js') }}"></script>
-    <script src="{{ asset('assets/modules/tooltip.js') }}"></script>
-    <script src="{{ asset('assets/modules/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/js/stisla.js') }}"></script>
-
-    <!-- JS Libraies -->
-    <script src="{{ asset('assets/modules/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/chart.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/owlcarousel2/dist/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/summernote/summernote-bs4.js') }}"></script>
-    <script src="{{ asset('assets/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
-
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('assets/js/page/index.js') }}"></script>
-
-    <!-- Template JS File -->
-    <script src="{{ asset('assets/js/scripts.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-
-    <!-- Additional JS File -->
-    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
-
-    <!-- Bootstrap -->
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> --}}
-
-</body>
-
-</html>
+   @endsection

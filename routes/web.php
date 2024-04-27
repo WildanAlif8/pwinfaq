@@ -18,14 +18,26 @@ Route::get('/', function () {
     return view('LandingPage');
 });
 Route::get('/DashboardAdmin', function () {
-    return view('Dashboard/DashboardAdmin');
+    return view('Dashboard/admin/DashboardAdmin');
+});
+Route::get('/DashboardUser', function () {
+    return view('Dashboard/User/DashboardUser');
 });
 Route::get('/DataInfaqAdmin', function () {
-    return view('Dashboard/DataInfaqAdmin');
+    return view('Dashboard/admin/DataInfaqAdmin');
 });
 Route::get('/RiwayatVerifikasiInfaqAdmin', function () {
-    return view('Dashboard/RiwayatVerifikasiInfaqAdmin');
+    return view('Dashboard/admin/RiwayatVerifikasiInfaqAdmin');
+});
+Route::get('/RiwayatUser', function () {
+    return view('Dashboard/User/RiwayatUser');
 });
 Route::get('/TagihanSiswaAdmin', function () {
-    return view('Dashboard/TagihanSiswaAdmin');
+    return view('Dashboard/admin/TagihanSiswaAdmin');
+});
+Route::get('/TagihanUser', function () {
+    return view('Dashboard/user/TagihanUser');
+});
+Route::get('/UploadUser', function () {
+    return view('Dashboard/user/UploadUser');
 });
